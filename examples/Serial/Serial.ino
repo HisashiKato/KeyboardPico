@@ -25,7 +25,7 @@ void setup() {
   // open the serial port:
   Serial.begin(9600);
   // initialize control over the keyboard:
-  Keyboard.begin();
+  Keyboard.begin(KeyboardLayout_ja_JP);
 }
 
 void loop() {

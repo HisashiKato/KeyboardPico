@@ -17,7 +17,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
   Keyboard.onLED(ledCB);
-  Keyboard.begin();
+  Keyboard.begin(KeyboardLayout_ja_JP);
   delay(5000);
   Serial.printf("Arduino USB Password Typer\n");
   Serial.printf("Press BOOTSEL to enter your super-secure(not!) password\n\n");
