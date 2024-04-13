@@ -3,7 +3,7 @@
   下に書かれている仕様のファイルを作成することで、キーボードレイアウトを
   変更することが可能になっているのですが、この仕様では日本語キーボードに
   存在する UsageID 0x87 以降の
-  0x87 Keyboard International1 「\ _ ろ」のキー、
+  0x87 Keyboard International1 「\ _ ろ」キー、
   0x89 Keyboard International3 「\ | ー」キー、
   0x8A Keyboard International4 「変換 前候補」キー、
   などの変更や追加が出来ません。
