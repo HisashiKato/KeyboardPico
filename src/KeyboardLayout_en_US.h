@@ -1,31 +1,41 @@
 /*
-  このライブラリの元になっている "Keyboard Library for Arduino" では、下に書かれている仕様のファイルを作成することで、
-  キーボードレイアウトを変更することが可能になっているのですが、この仕様では日本語キーボードに存在する、UsageID 0x87 以降の
-  0x87 Keyboard International1 「\ _ ろ」のキーや、0x89 Keyboard International3 「\ | ー」キー、
-  0x8A Keyboard International4 「変換 前候補」キー、などの変更や追加が出来ません。
-  加えて "Keyboard Library for Arduino" では、_hidReportDescriptor の LOGICAL_MAXIMUM が
-  (115)になっているので、0x74以降のキーIDの送信が不可能です。
+  このライブラリの元になっている "Keyboard Library for Arduino" では、
+  下に書かれている仕様のファイルを作成することで、キーボードレイアウトを
+  変更することが可能になっているのですが、この仕様では日本語キーボードに
+  存在する UsageID 0x87 以降の
+  0x87 Keyboard International1 「\ _ ろ」のキー、
+  0x89 Keyboard International3 「\ | ー」キー、
+  0x8A Keyboard International4 「変換 前候補」キー、
+  などの変更や追加が出来ません。
+  加えて "Keyboard Library for Arduino" では、_hidReportDescriptor の
+  LOGICAL_MAXIMUM が(115)になっているので、0x74以降のキーIDの送信が不可能です。
 
   但し、Raspberry Pi Pico / RP2040 Arduino core の中に組み込まれている、
-  "Keyboard Library for Arduino" を元にした HID_Keyboard ライブラリでは Raspberry Pi Pico の
-  USB HID キーボードのレポートディスクリプタを使用するので、送信するキーIDの制限がありません。
+  "Keyboard Library for Arduino" を元にした HID_Keyboard ライブラリでは
+  Raspberry Pi Pico の USB HID キーボードのレポートディスクリプタを使用するので、
+  送信するキーIDの制限がありません。
 
-  そこで、以前、"NicoHood Arduino HID-Project" ライブラリの、日本語キーボードレイアウトを作った時に得た知識を元にして、
-  Arduino の Keboard ライブラリを独自に(勝手に)改造、仕様変更をして、日本語キーボードのレイアウトに対応させてみました。
+  そこで、以前、"NicoHood Arduino HID-Project" ライブラリの、日本語キーボード
+  レイアウトを作った時に得た知識を元にして、Arduino の Keboard ライブラリを
+  独自に(勝手に)改造、仕様変更をして、日本語キーボードのレイアウトに
+  対応させてみました。
 
-  キーボードレイアウトのファイルの、レイアウト変換用の配列を 1byte から 2byte に変更しています。
+  キーボードレイアウトのファイルの、レイアウト変換用の配列を 1byte から 2byte に
+  変更しています。
 
   > extern const uint8_t KeyboardLayout_xx_YY[];
 
   > extern const uint16_t KeyboardLayout_ja_JP[];
                  ^^^^^^^^
 
-  元のレイアウト変換用の配列が1バイトの中に修飾キーと文字コードを詰め込んでいるのに対して、この改造ライブラリのレイアウト変換用の
-  配列は2バイトで、上位8ビットに修飾キー下位8ビットに文字コードを入れます。
+  元のレイアウト変換用の配列が1バイトの中に修飾キーと文字コードを詰め込んでいる
+  のに対して、この改造ライブラリのレイアウト変換用の配列は2バイトで、
+  上位8ビットに修飾キー下位8ビットに文字コードを入れます。
   ライブラリ内部の処理も変更して、日本語キーボードのレイアウトに対応させました。
 
-  以下は、この改造ライブラリの元になっているキーボードライブラリの、キーレイアウト変換ファイルの仕様です。
-  ==========================================================================
+  以下は、この改造ライブラリの元になっているキーボードライブラリの、
+  キーレイアウト変換ファイルの仕様です。
+  =====================================================================
 
   KeyboardLayout.h
 
