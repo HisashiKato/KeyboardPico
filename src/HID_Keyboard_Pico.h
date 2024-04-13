@@ -47,10 +47,13 @@ public:
   HID_Keyboard_Pico(void);
   void begin(const uint16_t *layout = KeyboardLayout_en_US);
   void end(void);
-  size_t write(uint8_t k);
+  size_t write(uint8_t c);
   size_t write(const uint8_t *buffer, size_t size);
   size_t press(uint8_t k);
   size_t release(uint8_t k);
+  size_t writeID(uint8_t k);
+  size_t pressID(uint8_t k);
+  size_t releaseID(uint8_t k);
   void releaseAll(void);
   size_t consumerPress(uint16_t k);
   size_t consumerRelease();
