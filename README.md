@@ -2,11 +2,14 @@
 
 **Raspberry Pi Pico/RP2040 for Arduino の、USB HID キーボードライブラリ** </br>
 **日本語キーボード配列対応版** </br>
- </br>
-## **説明準備中**  
+### 概要
+Raspberry Pi Pico/RP2040 for Arduino の USB HID キーボードライブラリを元にして、日本語キーボードレイアウトが追加出来るように改造したライブラリです。  
+</br>
 **素人改造。動作保証無し。サポート無し。使用は自己責任で。** </br>
 **色々間違っていたらごめんなさい** </br>
- </br>
+</br>ノリと勢いだけで脳死状態で素人が書いたコードなので、一応チェックはしましたが絶対にバグが潜んでいると思います。  
+**その道のプロの方、もしよろしければこれをフォークして、添削、修正して頂ければ幸いです。**  
+</br>
 ### ライブラリのインストール方法
 * Code から Download ZIP で保存
 * Arduino IDE の スケッチ＞ライブラリをインクルード＞ZIP形式のライブラリをインストール で保存したZIPを選択  
@@ -69,3 +72,14 @@ void setup() {
   }
 ```
 
+### 参考リンク
+**Arduino 本家のキーボードライブラリ**  
+https://www.arduino.cc/reference/en/language/functions/usb/keyboard/  
+https://github.com/arduino-libraries/Keyboard  
+</br>上記を元に [Raspberry Pi Pico Arduino core, for all RP2040 boards](https://github.com/earlephilhower/arduino-pico) 内に組み込まれたキーボードライブラリ  
+https://github.com/earlephilhower/arduino-pico/tree/master/libraries/Keyboard  
+</br>
+**Arduino HID-Project**  
+32u4 や SAMD21 の Arduino で USB HID デバイスを実現するライブラリ  
+活用させて頂いています。そして参考にさせて頂きました。とても勉強になりました。  
+https://github.com/NicoHood/HID
