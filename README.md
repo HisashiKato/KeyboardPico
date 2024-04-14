@@ -15,6 +15,15 @@
 基本的な使用方法は元になっている Keyboard Librar for Arduino と同じです。</br>
 https://www.arduino.cc/reference/en/language/functions/usb/keyboard/ <br>
 </br>
+日本語キーボードのレイアウトに対応しました。
+```
+#include "KeyboardPico.h"
+
+void setup() {
+  Keyboard.begin(KeyboardLayout_ja_JP); // 日本語キーボードのレイアウト準拠
+//Keyboard.begin(KeyboardLayout_en_US); // 英語(US)キーボードのレイアウト準拠
+}
+```
 以下の関数を追加しました。
 ```
   size_t writeID(uint8_t k);
