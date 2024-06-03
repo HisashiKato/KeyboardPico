@@ -1,4 +1,4 @@
-# KeyboardPico
+# KeyboardPicoJP
 
 **Raspberry Pi Pico/RP2040 for Arduino の、USB HID キーボードライブラリ** </br>
 **日本語キーボード配列対応版** </br>
