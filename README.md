@@ -15,7 +15,7 @@ Raspberry Pi Pico/RP2040 for Arduino の USB HID キーボードライブラリ�
 * Arduino IDE の スケッチ＞ライブラリをインクルード＞ZIP形式のライブラリをインストール で保存したZIPを選択  
 
 ### ライブラリの使用方法
-基本的な使用方法は元になっている Keyboard Librar for Arduino と同じです。</br>
+基本的な使用方法は元になっている Keyboard library for Arduino と同じです。</br>
 https://www.arduino.cc/reference/en/language/functions/usb/keyboard/ <br>
 </br>
 日本語キーボードのレイアウトに対応しました。
